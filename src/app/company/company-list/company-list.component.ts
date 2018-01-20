@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CompanyService } from '../company.service';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
@@ -10,6 +10,7 @@ import * as companyActions from './../../actions/company.actions';
   selector: 'app-company-list',
   templateUrl: './company-list.component.html',
   styleUrls: ['./company-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CompanyListComponent implements OnInit {
 
