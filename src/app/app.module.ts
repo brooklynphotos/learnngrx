@@ -7,6 +7,8 @@ import { StoreModule } from '@ngrx/store/src/store_module';
 
 import { companyReducer } from './reducers/company.reducer';
 import { CompanyListComponent } from './company/company-list/company-list.component';
+import { EffectsModule } from '@ngrx/effects/src/effects_module';
+import { CompanyEffects } from './effects/company.effects';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { CompanyListComponent } from './company/company-list/company-list.compon
     BrowserModule,
     StoreModule.forRoot({
       companies: companyReducer
-    })
+    }),
+    EffectsModule.forRoot([CompanyEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
